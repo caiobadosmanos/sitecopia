@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="password"],
+        .container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .container button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+        .container button[type="reset"] {
+            background-color: #6c757d;
+        }
+        .container button[type="reset"]:hover {
+            background-color: #5a6268;
+        }
+    <div class="page">
+        <form method="POST" class="formLogin">
+            <h1>Login</h1>
+            <p>Digite os seus dados de acesso no campo abaixo.</p>
+            <label for="email">E-mail</label>
+            <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
+            <label for="password">Senha</label>
+            <input type="password" placeholder="Digite seu e-mail" />
+            <a href="/">Esqueci minha senha</a>
+            <input type="submit" value="Acessar" class="btn" />
+        </form>
+    </div>
+
+</body>
+</html>

@@ -24,7 +24,9 @@ def logar():
 @app.route("/inscricao")
 def inscricao():
     return render_template("inscricao.html")
-
+@app.route("/entrar")
+def entrar():
+    return render_template("entrar.html")
 @app.route("/submit_registration", methods=["POST"])
 def submit_registration():
     nome = request.form["nome"]

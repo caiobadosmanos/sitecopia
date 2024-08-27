@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
 
 app = Flask(__name__)
 
@@ -16,8 +17,9 @@ def contatos():
 @app.route("/usuarios/<nome_usuario>")
 def usuarios(nome_usuario):
     return render_template("usuario.html", nome_usuario=nome_usuario)
+
 @app.route("/regras")
-def entrar():
+def regras():
     return render_template("regras.html")
 
 @app.route("/logar")
@@ -27,9 +29,11 @@ def logar():
 @app.route("/inscricao")
 def inscricao():
     return render_template("inscricao.html")
+
 @app.route("/entrar")
 def entrar():
     return render_template("entrar.html")
+
 @app.route("/submit_registration", methods=["POST"])
 def submit_registration():
     nome = request.form["nome"]
@@ -38,9 +42,9 @@ def submit_registration():
     mensagem = request.form.get("mensagem")
 
     # Dados do email
-    sender_email = "seu_email@gmail.com"
+    sender_email = os.getenv("SENDER_EMAIL")  # Definido em uma variável de ambiente
     receiver_email = "caioba.maciel@gmail.com"
-    password = "sua_senha_de_app"  # Ou a senha da sua conta, se permitido
+    password = os.getenv("EMAIL_PASSWORD")  # Senha também deve ser armazenada em uma variável de ambiente
 
     subject = "Novo Formulário de Inscrição"
     body = f"""
@@ -75,4 +79,5 @@ def submit_registration():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 

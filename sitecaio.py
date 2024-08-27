@@ -16,6 +16,9 @@ def contatos():
 @app.route("/usuarios/<nome_usuario>")
 def usuarios(nome_usuario):
     return render_template("usuario.html", nome_usuario=nome_usuario)
+@app.route("/regras")
+def entrar():
+    return render_template("regras.html")
 
 @app.route("/logar")
 def logar():
